@@ -1,0 +1,390 @@
+<!doctype html>
+<html class="no-js" lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title>Teaching Information</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        
+        <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet">
+        <link rel="stylesheet" href="assets/css/font-awesome.min.css">
+        <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+        <link rel="stylesheet" href="assets/css/style.css">
+        <link rel="stylesheet" href="assets/css/responsive.css" />
+
+        <style>
+            /* SPEED & VISIBILITY OPTIMIZATION */
+            body { opacity: 1 !important; visibility: visible !important; }
+            .preloader { display: none !important; }
+
+            /* NAVIGATION STYLING */
+            .navbar-header { float: left; }
+            .btn-return-home {
+                display: inline-block;
+                margin-top: 12px;
+                padding: 8px 20px;
+                border: 2px solid #333;
+                background: #333;
+                color: #fff !important;
+                border-radius: 4px;
+                font-weight: 700;
+                text-transform: uppercase;
+                font-size: 12px;
+                transition: all 0.3s ease;
+            }
+            .btn-return-home:hover {
+                background: transparent;
+                color: #333 !important;
+                text-decoration: none;
+            }
+            .btn-return-home i { margin-right: 8px; }
+
+            .navbar-nav { margin-top: 12px; margin-bottom: 0; }
+            .navbar-nav li a {
+                border: 1px solid #333 !important;
+                padding: 8px 18px !important;
+                margin-left: 10px;
+                margin-right: 10px;
+                border-radius: 4px;
+                transition: all 0.3s ease;
+                text-transform: uppercase;
+                font-size: 12px;
+                font-weight: 700;
+                color: #333 !important;
+                background: transparent;
+            }
+            .navbar-nav li a:hover {
+                background: #333 !important;
+                color: #fff !important;
+            }
+
+            /* TEACHING BOX STYLING */
+            .teaching-section { padding: 80px 0; background-color: #fcfcfc; }
+            
+            .teaching-box {
+                background: #fff;
+                border: 1px solid #e0e0e0;
+                padding: 35px 40px;
+                text-align: left;
+                transition: all 0.3s ease;
+                border-left: 5px solid #333; /* Changed to left border for horizontal look */
+                margin-bottom: 30px;
+                box-shadow: 0 2px 15px rgba(0,0,0,0.03);
+                border-radius: 4px;
+            }
+            
+            .teaching-box:hover {
+                transform: translateY(-3px);
+                box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+                border-left-color: #e74c3c;
+            }
+
+            .teaching-header {
+                display: flex;
+                align-items: center;
+                margin-bottom: 15px;
+                border-bottom: 1px solid #eee;
+                padding-bottom: 15px;
+            }
+
+            .teaching-icon {
+                font-size: 32px;
+                margin-right: 20px;
+                color: #333;
+            }
+
+            .teaching-title-group h3 {
+                font-weight: 700;
+                text-transform: uppercase;
+                font-size: 18px;
+                letter-spacing: 0.5px;
+                margin: 0;
+                color: #222;
+            }
+
+            .teaching-role {
+                display: block;
+                font-style: italic;
+                font-size: 14px;
+                color: #e74c3c;
+                font-weight: 600;
+                margin-top: 5px;
+            }
+
+            .course-list {
+                list-style: none;
+                padding-left: 0;
+                margin-top: 15px;
+                /* Split into two columns for wide display */
+                columns: 2;
+                -webkit-columns: 2;
+                -moz-columns: 2;
+                column-gap: 40px;
+            }
+
+            @media (max-width: 768px) {
+                .course-list {
+                    columns: 1;
+                }
+            }
+
+            .course-list li {
+                font-size: 14px;
+                color: #555;
+                padding: 4px 0;
+                margin-bottom: 6px;
+                border-bottom: 1px dotted #eee;
+                break-inside: avoid; /* Prevents list items from splitting across columns */
+            }
+            
+            .course-list li:last-child { border-bottom: none; }
+            
+            .footer { padding: 40px 0; border-top: 1px solid #eee; margin-top: 50px; background: #fff;}
+        </style>
+    </head>
+    <body>
+
+        <header id="main_menu" class="header">            
+            <div class="main_menu_bg">
+                <div class="container">
+                    <div class="row">
+                        <div class="nave_menu">
+                            <nav class="navbar navbar-default" id="navmenu">
+                                <div class="container-fluid">
+                                    <div class="navbar-header">
+                                        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                                            <span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span>
+                                        </button>
+                                        <a class="btn-return-home" href="index.html">
+                                            <i class="fa fa-chevron-left"></i> Return to Main Page
+                                        </a>
+                                    </div>
+                                    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                                        <ul class="nav navbar-nav navbar-right">
+                                            <li><a href="research.html">Research</a></li>
+                                            <li><a href="talks.html">Talks</a></li>
+                                            <li><a href="teaching.html">Teaching</a></li>
+                                            <li><a href="awards.html">Awards</a></li>
+                                            <li><a href="org_events.html">Events</a></li>
+                                            <li><a href="poetry.html">Poetry</a></li>
+                                            <li><a href="contact.html">Contact</a></li>
+                                        </ul>    
+                                    </div>
+                                </div>
+                            </nav>
+                        </div>  
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <section class="teaching-section">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-8 col-md-offset-2 text-center">
+                        <h2 style="font-weight: 700; text-transform: uppercase; margin-bottom: 10px;">Teaching Experience</h2>
+                        <p style="color: #888; margin-bottom: 60px;">A comprehensive record of courses taught and academic positions held.</p>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-10 col-md-offset-1">
+                        <div class="teaching-box">
+                            <div class="teaching-header">
+                                <i class="fa fa-university teaching-icon"></i>
+                                <div class="teaching-title-group">
+                                    <h3>Izmir Institute of Technology</h3>
+                                    <span class="teaching-role">2021 – Present</span>
+                                </div>
+                            </div>
+                            <ul class="course-list">
+                                <li>Analytic Number Theory, 2024 Fall (Graduate)</li>
+                                <li>Linear Algebra 1-2, 2024 Fall and 2025 Spring</li>
+                                <li>Nonstandard Analysis, 2024 Spring (Graduate)</li>
+                                <li>Introduction to Analytic Number Theory, 2024 Spring</li>
+                                <li>Additive Combinatorics, 2023 Fall & 2025 Spring (Graduate)</li>
+                                <li>Calculus for Engineering and Science I, 2023 Summer school</li>
+                                <li>Real Analysis, 2023 Spring (Graduate)</li>
+                                <li>Number Theory, 2022 Fall</li>
+                                <li>Discrete Mathematics, 2022 Spring</li>
+                                <li>Introduction to Algebraic Geometry, 2022 Spring (Graduate)</li>
+                                <li>Abstract Algebra, 2021 Fall and 2023 Fall</li>
+                                <li>Galois Theory, 2021 Fall</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-10 col-md-offset-1">
+                        <div class="teaching-box">
+                            <div class="teaching-header">
+                                <i class="fa fa-university teaching-icon"></i>
+                                <div class="teaching-title-group">
+                                    <h3>Dokuz Eylül University</h3>
+                                    <span class="teaching-role">Assistant Professor, 2018 – 2021</span>
+                                </div>
+                            </div>
+                            <ul class="course-list">
+                                <li>Algebraic Number Theory, 2020 Spring (Graduate)</li>
+                                <li>Analytic Number Theory, 2019 Fall (Graduate)</li>
+                                <li>Elementary Number Theory, 2019 Spring and 2020 Spring</li>
+                                <li>Fundamentals of Mathematics, 2019 Fall</li>
+                                <li>Calculus 1, 2018 Fall (3 sections) and 2020 Fall (2 sections)</li>
+                                <li>Calculus 2, 2019 Spring</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-10 col-md-offset-1">
+                        <div class="teaching-box">
+                            <div class="teaching-header">
+                                <i class="fa fa-university teaching-icon"></i>
+                                <div class="teaching-title-group">
+                                    <h3>Koç University</h3>
+                                    <span class="teaching-role">Instructor, 2016 – 2018</span>
+                                </div>
+                            </div>
+                            <ul class="course-list">
+                                <li>Calculus, 2016 Spring, 2017 Spring, 2018 Spring</li>
+                                <li>Differential Equations, 2016 Spring, 2017 Spring</li>
+                                <li>Finite Mathematics, 2016 Fall, 2017 Fall</li>
+                                <li>Linear Algebra, 2018 Spring</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-10 col-md-offset-1">
+                        <div class="teaching-box">
+                            <div class="teaching-header">
+                                <i class="fa fa-university teaching-icon"></i>
+                                <div class="teaching-title-group">
+                                    <h3>University of Lyon 1</h3>
+                                    <span class="teaching-role">Teaching Assistant (ATER), 2014 – 2015</span>
+                                </div>
+                            </div>
+                            <ul class="course-list">
+                                <li>Math 4 (Analysis), 2015 Spring</li>
+                                <li>Math 1 (Techniques Mathématiques de Base), 2014-2015</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-10 col-md-offset-1">
+                        <div class="teaching-box">
+                            <div class="teaching-header">
+                                <i class="fa fa-tree teaching-icon"></i>
+                                <div class="teaching-title-group">
+                                    <h3>TMD Summer and Winter School</h3>
+                                    <span class="teaching-role">Nesin Mathematics Village (Şirince - Selçuk - Izmir), Instructor</span>
+                                </div>
+                            </div>
+                            <ul class="course-list">
+                                <li>Introduction to Ramsey Theory, 04-10 August 2025</li>
+                                <li>Topics in Additive Combinatorics, 16-22 September 2024</li>
+                                <li>Additive Combinatorics, 22-27 Aug 2022, 18-23 Sept 2023</li>
+                                <li>Topics in Number Theory, Aug 2017, Aug 2018, Aug 2019, Sept 2021</li>
+                                <li>Primes in Arithmetic Progression, 15-21 August 2016</li>
+                                <li>Topics in Diophantine Geometry, 25-31 August 2014</li>
+                                <li>Heights and Elliptic Curves, 12-25 August 2013</li>
+                                <li>Nonstandard Calculus, 13-20 Aug 2012 and 3-9 Aug 2015</li>
+                                <li>Arithmetics, 04-17 July 2011</li>
+                                <li>Arithmetical Functions and Dirichlet Series, 02-15 Aug 2010</li>
+                                <li>Field Theory, August 2008 (one week)</li>
+                                <li>Winter School: The Freiman-Ruzsa Theorem (Jan 2025)</li>
+                                <li>Winter School: The Circle Method (Feb 2024)</li>
+                                <li>Winter School: Sieve Methods (Feb 2023)</li>
+                                <li>Winter School: Additive Combinatorics (Jan 2020)</li>
+                                <li>Winter School: Prime Number Theory (Feb 2019)</li>
+                                <li>Winter School: Sieve Methods (Feb 2011)</li>
+                                <li>High School Tutoring: Problem Solving, Functions, Trig (since 2011)</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-10 col-md-offset-1">
+                        <div class="teaching-box">
+                            <div class="teaching-header">
+                                <i class="fa fa-leaf teaching-icon"></i>
+                                <div class="teaching-title-group">
+                                    <h3>Çakılarası Mathematics Village</h3>
+                                    <span class="teaching-role">Instructor</span>
+                                </div>
+                            </div>
+                            <ul class="course-list">
+                                <li>Extremal Graph Theory, 25 August 2025</li>
+                                <li>Around Szemerédi's theorem, 12-16 August 2024</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-10 col-md-offset-1">
+                        <div class="teaching-box">
+                            <div class="teaching-header">
+                                <i class="fa fa-university teaching-icon"></i>
+                                <div class="teaching-title-group">
+                                    <h3>Koç University</h3>
+                                    <span class="teaching-role">Teaching Assistant, September 2009 – 2011</span>
+                                </div>
+                            </div>
+                            <ul class="course-list">
+                                <li>Math 207, Complex Algebra and Calculus, Spring 2011</li>
+                                <li>Math 103, Introduction to Abstract Mathematics, Fall 2010</li>
+                                <li>Math 203, Multivariable Calculus, Fall 2009</li>
+                                <li>Math 204, Differential Equations, Spring 2010</li>
+                                <li>Math 301, Real Analysis I, Fall 2009</li>
+                                <li>Math 302, Real Analysis II, Spring 2010</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-10 col-md-offset-1">
+                        <div class="teaching-box">
+                            <div class="teaching-header">
+                                <i class="fa fa-university teaching-icon"></i>
+                                <div class="teaching-title-group">
+                                    <h3>Istanbul Bilgi University</h3>
+                                    <span class="teaching-role">Student Teaching Assistant, September 2006 – June 2009</span>
+                                </div>
+                            </div>
+                            <p style="font-size: 13px; color: #777; margin-bottom: 10px;">Conducted weekly problem sessions for the courses below for two hours a week, while a junior, senior and master student.</p>
+                            <ul class="course-list">
+                                <li>Math 111, Set Theory I, Fall 2007, Fall 2008</li>
+                                <li>Math 112, Set Theory II, Spring 2009</li>
+                                <li>Math 151, Analysis I, Fall 2006, Fall 2007</li>
+                                <li>Math 152, Analysis II, Spring 2007, Spring 2008</li>
+                                <li>Math 222, Topology, Spring 2009</li>
+                                <li>Math 283, Analysis III, Fall 2008</li>
+                                <li>Math 284, Analysis IV, Spring 2008</li>
+                                <li>Math 311, Group Theory, Fall 2007</li>
+                                <li>Math 411, Field and Galois Theory, Fall 2008</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <footer class="footer">
+            <div class="container text-center">
+                <p>2026</p>
+            </div>
+        </footer>
+
+        <script src="assets/js/vendor/jquery-1.11.2.min.js"></script>
+        <script src="assets/js/vendor/bootstrap.min.js"></script>
+    </body>
+</html>

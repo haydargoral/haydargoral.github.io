@@ -1,0 +1,819 @@
+<!doctype html>
+<html class="no-js" lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title>Academic Events</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        
+        <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet">
+        <link rel="stylesheet" href="assets/css/font-awesome.min.css">
+        <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+        <link rel="stylesheet" href="assets/css/style.css">
+        <link rel="stylesheet" href="assets/css/responsive.css" />
+
+        <style>
+            /* SPEED & VISIBILITY OPTIMIZATION */
+            body { opacity: 1 !important; visibility: visible !important; }
+            .preloader { display: none !important; }
+
+            /* STATIC HEADER NAVIGATION */
+            .navbar-header { float: left; }
+            
+            .btn-return-home {
+                display: inline-block;
+                margin-top: 12px;
+                padding: 8px 20px;
+                border: 2px solid #333;
+                background: #333;
+                color: #fff !important;
+                border-radius: 4px;
+                font-weight: 700;
+                text-transform: uppercase;
+                font-size: 12px;
+                transition: all 0.3s ease;
+            }
+            .btn-return-home:hover {
+                background: transparent;
+                color: #333 !important;
+                text-decoration: none;
+            }
+            .btn-return-home i { margin-right: 8px; }
+
+            .navbar-nav { margin-top: 12px; margin-bottom: 0; }
+            .navbar-nav li a {
+                border: 1px solid #333 !important;
+                padding: 8px 18px !important;
+                margin-left: 10px;
+                margin-right: 10px;
+                border-radius: 4px;
+                transition: all 0.3s ease;
+                text-transform: uppercase;
+                font-size: 12px;
+                font-weight: 700;
+                color: #333 !important;
+                background: transparent;
+            }
+            .navbar-nav li a:hover {
+                background: #333 !important;
+                color: #fff !important;
+            }
+
+            /* MAIN PAGE HEADER */
+            .main-page-header {
+                padding: 80px 0 40px;
+                text-align: center;
+                background: #fdfdfd;
+                border-bottom: 1px solid #eee;
+            }
+            .main-page-header h1 {
+                font-weight: 700;
+                font-size: 42px;
+                text-transform: uppercase;
+                letter-spacing: 3px;
+                color: #222;
+                margin: 0;
+            }
+            .main-page-header .underline {
+                width: 60px;
+                height: 4px;
+                background: #333;
+                margin: 20px auto 0;
+            }
+
+            /* EVENTS STYLING */
+            .events-section { padding: 60px 0 80px; }
+            
+            .section-divider {
+                margin-top: 60px;
+                margin-bottom: 40px;
+                border-top: 1px dashed #ccc;
+            }
+
+            .event-category-title { 
+                font-weight: 700; 
+                text-transform: uppercase; 
+                border-left: 5px solid #333; 
+                padding-left: 15px;
+                margin-bottom: 30px; 
+                letter-spacing: 1px;
+                color: #222;
+                font-size: 24px;
+            }
+
+            .event-card {
+                background: #fff;
+                border: 1px solid #eee;
+                margin-bottom: 25px;
+                display: flex;
+                transition: 0.3s;
+                overflow: hidden;
+                border-radius: 4px;
+                box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+            }
+            .event-card:hover { transform: translateX(5px); border-color: #aaa; box-shadow: 0 5px 15px rgba(0,0,0,0.1); }
+
+            .event-date-box {
+                background: #333;
+                color: #fff;
+                padding: 15px;
+                min-width: 120px;
+                text-align: center;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                border-right: 1px solid #ddd;
+            }
+            /* Style for Attended events (Grey box) */
+            .attended-date {
+                background: #777 !important;
+            }
+
+            .event-date-box .day { font-size: 18px; font-weight: 700; display: block; line-height: 1.1; margin-bottom: 4px; }
+            .event-date-box .month { font-size: 11px; text-transform: uppercase; opacity: 0.9; line-height: 1.4; display: block;}
+
+            .event-content { padding: 20px 25px; flex-grow: 1; display: flex; flex-direction: column; justify-content: center; }
+            .event-type { font-size: 10px; text-transform: uppercase; color: #999; font-weight: 700; margin-bottom: 5px; letter-spacing: 1px; }
+            .event-title { font-weight: 700; margin-bottom: 5px; color: #222; font-size: 18px; margin-top: 0; }
+            .event-location { font-size: 13px; color: #555; font-weight: 500; }
+            .event-location i { margin-right: 5px; color: #e74c3c; }
+
+            .footer { padding: 40px 0; border-top: 1px solid #eee; background: #f9f9f9; }
+        </style>
+    </head>
+    <body>
+
+        <header id="main_menu" class="header">            
+            <div class="main_menu_bg">
+                <div class="container">
+                    <div class="row">
+                        <div class="nave_menu">
+                            <nav class="navbar navbar-default" id="navmenu">
+                                <div class="container-fluid">
+                                    <div class="navbar-header">
+                                        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                                            <span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span>
+                                        </button>
+                                        <a class="btn-return-home" href="index.html">
+                                            <i class="fa fa-chevron-left"></i> Return to Main Page
+                                        </a>
+                                    </div>
+                                    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                                        <ul class="nav navbar-nav navbar-right">
+                                            <li><a href="research.html">Research</a></li>
+                                            <li><a href="talks.html">Talks</a></li>
+                                            <li><a href="teaching.html">Teaching</a></li>
+                                            <li><a href="awards.html">Awards</a></li>
+                                            <li><a href="org_events.html">Events</a></li>
+                                            <li><a href="poetry.html">Poetry</a></li>
+                                            <li><a href="contact.html">Contact</a></li>
+                                        </ul>   
+                                    </div>
+                                </div>
+                            </nav>
+                        </div>  
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <section class="main-page-header">
+            <div class="container">
+                <h1>Academic Activities</h1>
+                <div class="underline"></div>
+            </div>
+        </section>
+
+        <section class="events-section">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-10 col-md-offset-1">
+                        
+                        <h2 class="event-category-title">Organized Events</h2>
+                        
+                        <div class="event-card">
+                            <div class="event-date-box">
+                                <span class="day">29</span>
+                                <span class="month">NOV 2024</span>
+                            </div>
+                            <div class="event-content">
+                                <span class="event-type">Project Closure</span>
+                                <h3 class="event-title">TUBITAK 3501 Project Closure (122F027), Around Szemerédi's Theorem</h3>
+                                <div class="event-location"><i class="fa fa-map-marker"></i> IZTECH</div>
+                            </div>
+                        </div>
+
+                        <div class="event-card">
+                            <div class="event-date-box">
+                                <span class="day">01</span>
+                                <span class="month">NOV 2024</span>
+                            </div>
+                            <div class="event-content">
+                                <span class="event-type">Symposium / Workshop</span>
+                                <h3 class="event-title">Number Theory and Combinatorics 2</h3>
+                                <div class="event-location"><i class="fa fa-map-marker"></i> IZTECH</div>
+                            </div>
+                        </div>
+
+                        <div class="event-card">
+                            <div class="event-date-box">
+                                <span class="day">18</span>
+                                <span class="month">NOV 2022</span>
+                            </div>
+                            <div class="event-content">
+                                <span class="event-type">Symposium / Workshop</span>
+                                <h3 class="event-title">Number Theory and Combinatorics 1</h3>
+                                <div class="event-location"><i class="fa fa-map-marker"></i> IZTECH</div>
+                            </div>
+                        </div>
+
+                        <div class="event-card">
+                            <div class="event-date-box">
+                                <span class="day">15-17</span>
+                                <span class="month">JUN 2022</span>
+                            </div>
+                            <div class="event-content">
+                                <span class="event-type">Conference</span>
+                                <h3 class="event-title">Izmir Mathematics Days 4</h3>
+                                <div class="event-location"><i class="fa fa-laptop"></i> Online Event</div>
+                            </div>
+                        </div>
+
+                        <div class="event-card">
+                            <div class="event-date-box">
+                                <span class="day">13</span>
+                                <span class="month">MAY 2022</span>
+                            </div>
+                            <div class="event-content">
+                                <span class="event-type">Competition</span>
+                                <h3 class="event-title">IZTECH High School Mathematics Competition</h3>
+                                <div class="event-location"><i class="fa fa-map-marker"></i> IZTECH</div>
+                            </div>
+                        </div>
+
+                        <div class="event-card">
+                            <div class="event-date-box">
+                                <span class="day">2018</span>
+                                <span class="month">2020</span>
+                            </div>
+                            <div class="event-content">
+                                <span class="event-type">Series</span>
+                                <h3 class="event-title">Arithmetica Izmir 1-2-3</h3>
+                                <div class="event-location"><i class="fa fa-map-marker"></i> Izmir, Turkey</div>
+                            </div>
+                        </div>
+
+                        <div class="event-card">
+                            <div class="event-date-box">
+                                <span class="month">DEC 2010</span>
+                            </div>
+                            <div class="event-content">
+                                <span class="event-type">Workshop</span>
+                                <h3 class="event-title">Analytic Number Theory Workshop</h3>
+                                <div class="event-location"><i class="fa fa-map-marker"></i> Feza Gürsey Institute</div>
+                            </div>
+                        </div>
+
+                        <div class="event-card">
+                            <div class="event-date-box">
+                                <span class="month">SEP 2009</span>
+                            </div>
+                            <div class="event-content">
+                                <span class="event-type">Symposium</span>
+                                <h3 class="event-title">XXII. National Mathematics Symposium</h3>
+                                <div class="event-location"><i class="fa fa-map-marker"></i> Nesin Mathematics Village</div>
+                            </div>
+                        </div>
+
+
+                        <div class="section-divider"></div>
+
+
+                        <h2 class="event-category-title">Attended Events</h2>
+
+                        <div class="event-card">
+                            <div class="event-date-box attended-date">
+                                <span class="day">2025</span>
+                            </div>
+                            <div class="event-content">
+                                <span class="event-type">Symposium</span>
+                                <h3 class="event-title">37th National Mathematics Symposium in Turkey</h3>
+                                <div class="event-location"><i class="fa fa-map-marker"></i> Antalya</div>
+                            </div>
+                        </div>
+
+                        <div class="event-card">
+                            <div class="event-date-box attended-date">
+                                <span class="month">JUL 2025</span>
+                            </div>
+                            <div class="event-content">
+                                <span class="event-type">Conference</span>
+                                <h3 class="event-title">Rings, Modules and Algebras</h3>
+                                <div class="event-location"><i class="fa fa-map-marker"></i> Bursa Technical University</div>
+                            </div>
+                        </div>
+
+                        <div class="event-card">
+                            <div class="event-date-box attended-date">
+                                <span class="month">JUL 2025</span>
+                            </div>
+                            <div class="event-content">
+                                <span class="event-type">International Conference</span>
+                                <h3 class="event-title">Journées Arithmétiques 2025</h3>
+                                <div class="event-location"><i class="fa fa-map-marker"></i> Luxembourg</div>
+                            </div>
+                        </div>
+
+                        <div class="event-card">
+                            <div class="event-date-box attended-date">
+                                <span class="month">MAY 2025</span>
+                            </div>
+                            <div class="event-content">
+                                <span class="event-type">Workshop</span>
+                                <h3 class="event-title">Istanbul Model Theory Days 1</h3>
+                                <div class="event-location"><i class="fa fa-map-marker"></i> Boğaziçi University</div>
+                            </div>
+                        </div>
+
+                        <div class="event-card">
+                            <div class="event-date-box attended-date">
+                                <span class="month">MAY 2025</span>
+                            </div>
+                            <div class="event-content">
+                                <span class="event-type">Workshop</span>
+                                <h3 class="event-title">9. Cemal Koç Algebra Days</h3>
+                                <div class="event-location"><i class="fa fa-map-marker"></i> Ege University</div>
+                            </div>
+                        </div>
+
+                        <div class="event-card">
+                            <div class="event-date-box attended-date">
+                                <span class="month">OCT 2024</span>
+                            </div>
+                            <div class="event-content">
+                                <span class="event-type">Conference</span>
+                                <h3 class="event-title">Model Theory and Applications to Groups and Combinatorics</h3>
+                                <div class="event-location"><i class="fa fa-map-marker"></i> CIRM, Marseille</div>
+                            </div>
+                        </div>
+
+                        <div class="event-card">
+                            <div class="event-date-box attended-date">
+                                <span class="month">JUN 2024</span>
+                            </div>
+                            <div class="event-content">
+                                <span class="event-type">Conference</span>
+                                <h3 class="event-title">Ramsey Theory in Logic, Combinatorics and Complexity IV</h3>
+                                <div class="event-location"><i class="fa fa-map-marker"></i> Pisa</div>
+                            </div>
+                        </div>
+
+                        <div class="event-card">
+                            <div class="event-date-box attended-date">
+                                <span class="month">NOV 2023</span>
+                            </div>
+                            <div class="event-content">
+                                <span class="event-type">Conference</span>
+                                <h3 class="event-title">2023 Geomod Conference</h3>
+                                <div class="event-location"><i class="fa fa-map-marker"></i> Freiburg</div>
+                            </div>
+                        </div>
+
+                        <div class="event-card">
+                            <div class="event-date-box attended-date">
+                                <span class="month">JUL 2023</span>
+                            </div>
+                            <div class="event-content">
+                                <span class="event-type">International Conference</span>
+                                <h3 class="event-title">Journées Arithmétiques 2023</h3>
+                                <div class="event-location"><i class="fa fa-map-marker"></i> Nancy-France</div>
+                            </div>
+                        </div>
+
+                        <div class="event-card">
+                            <div class="event-date-box attended-date">
+                                <span class="day">2023</span>
+                            </div>
+                            <div class="event-content">
+                                <span class="event-type">Workshop</span>
+                                <h3 class="event-title">Antalya Algebra Days 2023</h3>
+                                <div class="event-location"><i class="fa fa-map-marker"></i> Nesin Mathematics Village, Turkey</div>
+                            </div>
+                        </div>
+
+                        <div class="event-card">
+                            <div class="event-date-box attended-date">
+                                <span class="day">2022</span>
+                            </div>
+                            <div class="event-content">
+                                <span class="event-type">Symposium</span>
+                                <h3 class="event-title">34th National Mathematics Symposium in Turkey</h3>
+                                <div class="event-location"><i class="fa fa-map-marker"></i> Izmir</div>
+                            </div>
+                        </div>
+
+                        <div class="event-card">
+                            <div class="event-date-box attended-date">
+                                <span class="month">JUN 2022</span>
+                            </div>
+                            <div class="event-content">
+                                <span class="event-type">Conference</span>
+                                <h3 class="event-title">Ultramath 2022</h3>
+                                <div class="event-location"><i class="fa fa-map-marker"></i> Pisa-Italy</div>
+                            </div>
+                        </div>
+
+                        <div class="event-card">
+                            <div class="event-date-box attended-date">
+                                <span class="month">SEP 2019</span>
+                            </div>
+                            <div class="event-content">
+                                <span class="event-type">Conference</span>
+                                <h3 class="event-title">Izmir Mathematics Days 2</h3>
+                                <div class="event-location"><i class="fa fa-map-marker"></i> Izmir</div>
+                            </div>
+                        </div>
+
+                        <div class="event-card">
+                            <div class="event-date-box attended-date">
+                                <span class="day">2019</span>
+                            </div>
+                            <div class="event-content">
+                                <span class="event-type">Symposium</span>
+                                <h3 class="event-title">32nd National Mathematics Symposium in Turkey</h3>
+                                <div class="event-location"><i class="fa fa-map-marker"></i> Samsun</div>
+                            </div>
+                        </div>
+
+                        <div class="event-card">
+                            <div class="event-date-box attended-date">
+                                <span class="month">JUL 2019</span>
+                            </div>
+                            <div class="event-content">
+                                <span class="event-type">International Conference</span>
+                                <h3 class="event-title">Journées Arithmétiques 2019</h3>
+                                <div class="event-location"><i class="fa fa-map-marker"></i> Istanbul</div>
+                            </div>
+                        </div>
+
+                        <div class="event-card">
+                            <div class="event-date-box attended-date">
+                                <span class="month">AUG 2019</span>
+                            </div>
+                            <div class="event-content">
+                                <span class="event-type">Workshop</span>
+                                <h3 class="event-title">Izmir Workshop in Number Theory</h3>
+                                <div class="event-location"><i class="fa fa-map-marker"></i> Izmir</div>
+                            </div>
+                        </div>
+
+                        <div class="event-card">
+                            <div class="event-date-box attended-date">
+                                <span class="month">MAR 2018</span>
+                            </div>
+                            <div class="event-content">
+                                <span class="event-type">Workshop</span>
+                                <h3 class="event-title">Model Theory and Applications</h3>
+                                <div class="event-location"><i class="fa fa-map-marker"></i> IHP, Paris</div>
+                            </div>
+                        </div>
+
+                        <div class="event-card">
+                            <div class="event-date-box attended-date">
+                                <span class="day">2017</span>
+                            </div>
+                            <div class="event-content">
+                                <span class="event-type">School</span>
+                                <h3 class="event-title">International Autumn School on Computational Number Theory</h3>
+                                <div class="event-location"><i class="fa fa-map-marker"></i> Izmir</div>
+                            </div>
+                        </div>
+
+                        <div class="event-card">
+                            <div class="event-date-box attended-date">
+                                <span class="month">SEP 2017</span>
+                            </div>
+                            <div class="event-content">
+                                <span class="event-type">Symposium</span>
+                                <h3 class="event-title">30th National Mathematics Symposium in Turkey</h3>
+                                <div class="event-location"><i class="fa fa-map-marker"></i> Turkey</div>
+                            </div>
+                        </div>
+
+                        <div class="event-card">
+                            <div class="event-date-box attended-date">
+                                <span class="month">OCT 2016</span>
+                            </div>
+                            <div class="event-content">
+                                <span class="event-type">Conference</span>
+                                <h3 class="event-title">BN-Pair</h3>
+                                <div class="event-location"><i class="fa fa-map-marker"></i> Istanbul</div>
+                            </div>
+                        </div>
+
+                        <div class="event-card">
+                            <div class="event-date-box attended-date">
+                                <span class="month">AUG 2016</span>
+                            </div>
+                            <div class="event-content">
+                                <span class="event-type">Symposium</span>
+                                <h3 class="event-title">29th National Mathematics Symposium in Turkey</h3>
+                                <div class="event-location"><i class="fa fa-map-marker"></i> Turkey</div>
+                            </div>
+                        </div>
+
+                        <div class="event-card">
+                            <div class="event-date-box attended-date">
+                                <span class="day">2015</span>
+                            </div>
+                            <div class="event-content">
+                                <span class="event-type">Conference</span>
+                                <h3 class="event-title">Growth, Symbolic Dynamics and Combinatorics of Words in Groups</h3>
+                                <div class="event-location"><i class="fa fa-map-marker"></i> ENS Paris</div>
+                            </div>
+                        </div>
+
+                        <div class="event-card">
+                            <div class="event-date-box attended-date">
+                                <span class="day">07-10</span>
+                                <span class="month">APR 2015</span>
+                            </div>
+                            <div class="event-content">
+                                <span class="event-type">Conference</span>
+                                <h3 class="event-title">Model Theory, Difference/Differential Equations and Applications</h3>
+                                <div class="event-location"><i class="fa fa-map-marker"></i> Luminy-France</div>
+                            </div>
+                        </div>
+
+                        <div class="event-card">
+                            <div class="event-date-box attended-date">
+                                <span class="month">AUG 2014</span>
+                            </div>
+                            <div class="event-content">
+                                <span class="event-type">Conference</span>
+                                <h3 class="event-title">International Conference on Algebra and Number Theory</h3>
+                                <div class="event-location"><i class="fa fa-map-marker"></i> Samsun-Turkey</div>
+                            </div>
+                        </div>
+
+                        <div class="event-card">
+                            <div class="event-date-box attended-date">
+                                <span class="month">JUL 2014</span>
+                            </div>
+                            <div class="event-content">
+                                <span class="event-type">Conference</span>
+                                <h3 class="event-title">Recent developments in the applications of model theory to algebraic, analytic and diophantine geometry</h3>
+                                <div class="event-location"><i class="fa fa-map-marker"></i> Edinburgh</div>
+                            </div>
+                        </div>
+
+                        <div class="event-card">
+                            <div class="event-date-box attended-date">
+                                <span class="month">MAY 2014</span>
+                            </div>
+                            <div class="event-content">
+                                <span class="event-type">Workshop</span>
+                                <h3 class="event-title">Model Theory and Arithmetic Geometry</h3>
+                                <div class="event-location"><i class="fa fa-map-marker"></i> MSRI, USA</div>
+                            </div>
+                        </div>
+
+                        <div class="event-card">
+                            <div class="event-date-box attended-date">
+                                <span class="month">SEP 2013</span>
+                            </div>
+                            <div class="event-content">
+                                <span class="event-type">Conference</span>
+                                <h3 class="event-title">Last Maloa Conference</h3>
+                                <div class="event-location"><i class="fa fa-map-marker"></i> Manchester</div>
+                            </div>
+                        </div>
+
+                        <div class="event-card">
+                            <div class="event-date-box attended-date">
+                                <span class="day">2013</span>
+                            </div>
+                            <div class="event-content">
+                                <span class="event-type">Seminar Series</span>
+                                <h3 class="event-title">Models and Groups 1-5</h3>
+                                <div class="event-location"><i class="fa fa-map-marker"></i> Istanbul</div>
+                            </div>
+                        </div>
+
+                        <div class="event-card">
+                            <div class="event-date-box attended-date">
+                                <span class="month">SEP 2013</span>
+                            </div>
+                            <div class="event-content">
+                                <span class="event-type">Symposium</span>
+                                <h3 class="event-title">26th National Mathematics Symposium in Turkey</h3>
+                                <div class="event-location"><i class="fa fa-map-marker"></i> Turkey</div>
+                            </div>
+                        </div>
+
+                        <div class="event-card">
+                            <div class="event-date-box attended-date">
+                                <span class="month">JUN 2013</span>
+                            </div>
+                            <div class="event-content">
+                                <span class="event-type">Conference</span>
+                                <h3 class="event-title">Model Theory 2013</h3>
+                                <div class="event-location"><i class="fa fa-map-marker"></i> Ravello, Italy</div>
+                            </div>
+                        </div>
+
+                        <div class="event-card">
+                            <div class="event-date-box attended-date">
+                                <span class="month">MAY 2013</span>
+                            </div>
+                            <div class="event-content">
+                                <span class="event-type">Workshop</span>
+                                <h3 class="event-title">Antalya Algebra Days</h3>
+                                <div class="event-location"><i class="fa fa-map-marker"></i> Nesin Mathematics Village, Turkey</div>
+                            </div>
+                        </div>
+
+                        <div class="event-card">
+                            <div class="event-date-box attended-date">
+                                <span class="day">29.04-03.05</span>
+                                <span class="month">2013</span>
+                            </div>
+                            <div class="event-content">
+                                <span class="event-type">Conference</span>
+                                <h3 class="event-title">Final MALOA Conference</h3>
+                                <div class="event-location"><i class="fa fa-map-marker"></i> Luminy-Marseille</div>
+                            </div>
+                        </div>
+
+                        <div class="event-card">
+                            <div class="event-date-box attended-date">
+                                <span class="day">16-18</span>
+                                <span class="month">JAN 2013</span>
+                            </div>
+                            <div class="event-content">
+                                <span class="event-type">Meeting</span>
+                                <h3 class="event-title">Biritish Postgraduate Model Theory Meeting</h3>
+                                <div class="event-location"><i class="fa fa-map-marker"></i> Manchester</div>
+                            </div>
+                        </div>
+
+                        <div class="event-card">
+                            <div class="event-date-box attended-date">
+                                <span class="day">26.08-01.09</span>
+                                <span class="month">2012</span>
+                            </div>
+                            <div class="event-content">
+                                <span class="event-type">Workshop</span>
+                                <h3 class="event-title">Third MALOA Training Workshop</h3>
+                                <div class="event-location"><i class="fa fa-map-marker"></i> Oxford</div>
+                            </div>
+                        </div>
+
+                        <div class="event-card">
+                            <div class="event-date-box attended-date">
+                                <span class="day">25.06-05.07</span>
+                                <span class="month">2012</span>
+                            </div>
+                            <div class="event-content">
+                                <span class="event-type">School</span>
+                                <h3 class="event-title">Zilber-Pink Conjecture Summer School</h3>
+                                <div class="event-location"><i class="fa fa-map-marker"></i> Paris, France</div>
+                            </div>
+                        </div>
+
+                        <div class="event-card">
+                            <div class="event-date-box attended-date">
+                                <span class="month">JUN 2012</span>
+                            </div>
+                            <div class="event-content">
+                                <span class="event-type">Conference</span>
+                                <h3 class="event-title">Model Theory and Applications</h3>
+                                <div class="event-location"><i class="fa fa-map-marker"></i> Max Planck Institute for Mathematics, Bonn</div>
+                            </div>
+                        </div>
+
+                        <div class="event-card">
+                            <div class="event-date-box attended-date">
+                                <span class="month">MAY 2012</span>
+                            </div>
+                            <div class="event-content">
+                                <span class="event-type">Workshop</span>
+                                <h3 class="event-title">Antalya Algebra Days</h3>
+                                <div class="event-location"><i class="fa fa-map-marker"></i> Çeşme, Turkey</div>
+                            </div>
+                        </div>
+
+                        <div class="event-card">
+                            <div class="event-date-box attended-date">
+                                <span class="day">2011-2013</span>
+                            </div>
+                            <div class="event-content">
+                                <span class="event-type">Seminar Series</span>
+                                <h3 class="event-title">GTM (Geometry and Model Theory)</h3>
+                                <div class="event-location"><i class="fa fa-map-marker"></i> Paris 7 - ENS (Various Dates)</div>
+                            </div>
+                        </div>
+
+                        <div class="event-card">
+                            <div class="event-date-box attended-date">
+                                <span class="month">DEC 2011</span>
+                            </div>
+                            <div class="event-content">
+                                <span class="event-type">Conference</span>
+                                <h3 class="event-title">Model Theory of Difference Fields</h3>
+                                <div class="event-location"><i class="fa fa-map-marker"></i> Paris-Sud 11</div>
+                            </div>
+                        </div>
+
+                        <div class="event-card">
+                            <div class="event-date-box attended-date">
+                                <span class="day">2011</span>
+                            </div>
+                            <div class="event-content">
+                                <span class="event-type">Conference</span>
+                                <h3 class="event-title">Algebra, Combinatorics and Model Theory</h3>
+                                <div class="event-location"><i class="fa fa-map-marker"></i> Koc University, Istanbul</div>
+                            </div>
+                        </div>
+
+                        <div class="event-card">
+                            <div class="event-date-box attended-date">
+                                <span class="day">2010</span>
+                            </div>
+                            <div class="event-content">
+                                <span class="event-type">Workshop</span>
+                                <h3 class="event-title">Algebraic Number Theory and L-Function Workshop</h3>
+                                <div class="event-location"><i class="fa fa-map-marker"></i> Adrasan, Antalya</div>
+                            </div>
+                        </div>
+
+                        <div class="event-card">
+                            <div class="event-date-box attended-date">
+                                <span class="day">2010</span>
+                            </div>
+                            <div class="event-content">
+                                <span class="event-type">Workshop</span>
+                                <h3 class="event-title">Number Theory Workshop</h3>
+                                <div class="event-location"><i class="fa fa-map-marker"></i> Nesin Mathematics Village, Izmir</div>
+                            </div>
+                        </div>
+
+                        <div class="event-card">
+                            <div class="event-date-box attended-date">
+                                <span class="day">2009</span>
+                            </div>
+                            <div class="event-content">
+                                <span class="event-type">Workshop</span>
+                                <h3 class="event-title">Group Theory Workshop</h3>
+                                <div class="event-location"><i class="fa fa-map-marker"></i> Nesin Mathematics Village, Izmir</div>
+                            </div>
+                        </div>
+
+                        <div class="event-card">
+                            <div class="event-date-box attended-date">
+                                <span class="day">2007-2011</span>
+                            </div>
+                            <div class="event-content">
+                                <span class="event-type">Summer School</span>
+                                <h3 class="event-title">TMD Summer School</h3>
+                                <div class="event-location"><i class="fa fa-map-marker"></i> Nesin Mathematics Village, Izmir</div>
+                            </div>
+                        </div>
+
+                        <div class="event-card">
+                            <div class="event-date-box attended-date">
+                                <span class="day">2005-2006</span>
+                            </div>
+                            <div class="event-content">
+                                <span class="event-type">Summer School</span>
+                                <h3 class="event-title">TMD Summer School</h3>
+                                <div class="event-location"><i class="fa fa-map-marker"></i> Various places in Turkey</div>
+                            </div>
+                        </div>
+
+                        <div class="event-card">
+                            <div class="event-date-box attended-date">
+                                <span class="day">2006-2009</span>
+                            </div>
+                            <div class="event-content">
+                                <span class="event-type">Workshop</span>
+                                <h3 class="event-title">Antalya Algebra Days</h3>
+                                <div class="event-location"><i class="fa fa-map-marker"></i> Antalya, Turkey</div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <footer class="footer">
+            <div class="container text-center">
+                <p>2026</p>
+            </div>
+        </footer>
+
+        <script src="assets/js/vendor/jquery-1.11.2.min.js"></script>
+        <script src="assets/js/vendor/bootstrap.min.js"></script>
+    </body>
+</html>
