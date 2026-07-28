@@ -95,17 +95,30 @@
             z-index: 9999 !important; /* Forces header to the top layer */
         }
 
-        .navbar-collapse {
-            background-color: #ffffff !important; /* Ensures menu isn't transparent */
-            position: relative;
-            z-index: 10000 !important;
-            max-height: 100vh; /* Prevents menu from being cut off */
-        }
-
         /* Ensure the main CV content stays behind the dropdown */
         .cv-section {
             position: relative;
             z-index: 1;
+        }
+
+        /* MOBILE MENU: overlay instead of pushing page content down */
+        @media (max-width: 767px) {
+            .navbar { position: static; }
+            .navbar-collapse {
+                position: absolute !important;
+                top: 100% !important;
+                margin-top: 0 !important;
+                left: 0;
+                right: 0;
+                margin-left: 0 !important;
+                margin-right: 0 !important;
+                z-index: 10000 !important;
+                background-color: #ffffff !important;
+                max-height: calc(100vh - 60px);
+                overflow-y: auto;
+                box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+                border-top: 1px solid #eee;
+            }
         }
 
         /* Fix for Bootstrap's container overflow */

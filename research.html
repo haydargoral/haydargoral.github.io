@@ -19,7 +19,28 @@
         <style>
             body { opacity: 1 !important; visibility: visible !important; }
             .preloader { display: none !important; }
-            .navbar-header { float: left; }
+
+            /* MOBILE MENU: overlay instead of pushing page content down */
+            #main_menu { position: relative; z-index: 9999; }
+            @media (max-width: 767px) {
+                .navbar { position: static; }
+                .navbar-collapse {
+                    position: absolute !important;
+                    top: 100% !important;
+                    margin-top: 0 !important;
+                    left: 0;
+                    right: 0;
+                    margin-left: 0 !important;
+                    margin-right: 0 !important;
+                    z-index: 10000 !important;
+                    background-color: #ffffff !important;
+                    max-height: calc(100vh - 60px);
+                    overflow-y: auto;
+                    box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+                    border-top: 1px solid #eee;
+                }
+            }
+
             .btn-return-home { display: inline-block; margin-top: 12px; padding: 8px 20px; border: 2px solid #333; background: #333; color: #fff !important; border-radius: 4px; font-weight: 700; text-transform: uppercase; font-size: 12px; transition: all 0.3s ease; }
             .btn-return-home:hover { background: transparent; color: #333 !important; text-decoration: none; }
             .navbar-nav { margin-top: 12px; margin-bottom: 0; }
@@ -53,6 +74,9 @@
                             <nav class="navbar navbar-default" id="navmenu">
                                 <div class="container-fluid">
                                     <div class="navbar-header">
+                                        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                                            <span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span>
+                                        </button>
                                         <a class="btn-return-home" href="index.html"><i class="fa fa-chevron-left"></i> Return to Main Page</a>
                                     </div>
                                     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">

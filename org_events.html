@@ -17,9 +17,29 @@
             body { opacity: 1 !important; visibility: visible !important; }
             .preloader { display: none !important; }
 
+            /* MOBILE MENU: overlay instead of pushing page content down */
+            #main_menu { position: relative; z-index: 9999; }
+            @media (max-width: 767px) {
+                .navbar { position: static; }
+                .navbar-collapse {
+                    position: absolute !important;
+                    top: 100% !important;
+                    margin-top: 0 !important;
+                    left: 0;
+                    right: 0;
+                    margin-left: 0 !important;
+                    margin-right: 0 !important;
+                    z-index: 10000 !important;
+                    background-color: #ffffff !important;
+                    max-height: calc(100vh - 60px);
+                    overflow-y: auto;
+                    box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+                    border-top: 1px solid #eee;
+                }
+            }
+
             /* STATIC HEADER NAVIGATION */
-            .navbar-header { float: left; }
-            
+
             .btn-return-home {
                 display: inline-block;
                 margin-top: 12px;
@@ -180,7 +200,7 @@
         <section class="main-page-header">
             <div class="container">
                 <h1>Academic Activities</h1>
-                <div class="underline"></div>
+                
             </div>
         </section>
 
